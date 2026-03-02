@@ -283,6 +283,9 @@ wheels = [
 ]
 
 [package.optional-dependencies]
+duckdb = [
+    { name = "duckdb" },
+]
 workspace = [
     { name = "duckdb" },
     { name = "ibis-framework" },
@@ -298,11 +301,11 @@ name = "dlt-taxi-pipeline-hw"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "dlt", extra = ["workspace"] },
+    { name = "dlt", extra = ["duckdb", "workspace"] },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "dlt", extras = ["workspace"], specifier = ">=1.22.2" }]
+requires-dist = [{ name = "dlt", extras = ["duckdb", "workspace"], specifier = ">=1.22.2" }]
 
 [[package]]
 name = "docutils"
